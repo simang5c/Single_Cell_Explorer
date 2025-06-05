@@ -22,9 +22,6 @@ Interactive Visualizations:
   - **Violin Plot**: Shows gene expression distributions across clusters.
   - **Dot Plot**: Visualizes gene expression and percentage of expressing cells per cluster.
   - **Feature Plot**: Maps gene expression onto UMAP coordinates.
-- **Progress Tracking**: Real-time progress bar for file uploads.
-- **Organism Selection**: Supports Mouse and Human gene naming conventions.
-- **Modular Design**: Organized codebase with separate modules for state management, plotting, and utilities.
 
 ## Project Structure
 ```plaintext
