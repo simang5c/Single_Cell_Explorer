@@ -1,6 +1,6 @@
 # Single Cell Explorer
 
-The Single Cell Explorer is a web-based application designed for visualizing and exploring single-cell RNA sequencing data, built using the Solara framework. It provides an intuitive interface for researchers to upload, analyze, and visualize single-cell datasets stored in .h5ad format (e.g., Seurat data). The application supports interactive exploration of cell clusters and gene expression patterns through multiple plot types, with a focus on usability and modularity.
+A web-based application for visualizing and exploring single-cell RNA sequencing data, built with [Solara](https://solara.dev/). It enables users to upload `.h5ad` files (e.g., Seurat data), select clustering resolutions, input gene markers, and generate interactive UMAP, violin, dot, and feature plots. The application runs seamlessly using **Singularity v4.3.1-noble**, which encapsulates all dependencies, eliminating the need for manual environment setup. Key features include real-time progress tracking, support for Mouse and Human gene naming, and a modular design for maintainability.
 
 ## Key Features
 - Data Upload: Users can drag and drop .h5ad files containing single-cell data, which must include UMAP embeddings (X_umap) and clustering annotations (e.g., RNA_snn_res.*, seurat_clusters). The application processes the data and provides real-time progress updates via a progress bar.
@@ -30,8 +30,8 @@ Interactive Visualizations:
 ## Project Structure
 ```plaintext
 Single_cell_explorer/
-├── Explorer/
-│   ├── single_cell_explorer.py  # Main Solara app and UI logic
+├── single_cell_explorer.py  # Main Solara app and UI logic
+├── Single_cell_explorer.sif # Singularity container file
 │   ├── utils/
 │   │   ├── state.py             # AppState dataclass and reactive variables
 │   │   ├── utils.py             # Utility functions (file loading, gene name fixing)
