@@ -27,7 +27,6 @@ Interactive Visualizations:
 - **Modular Design**: Organized codebase with separate modules for state management, plotting, and utilities.
 
 ## Project Structure
-## Project Structure
 ```plaintext
 Single_cell_explorer/
 ├── single_cell_explorer.py  # Main Solara app and UI logic
@@ -46,9 +45,13 @@ Single_cell_explorer/
 - singularity v4.3.1-noble
 
 ## Setup Instructions
-1. **Clone the Repository**:
+- **Clone the Repository**:
    ```bash
    git clone https://github.com/<your-username>/Single_cell_explorer.git
    cd Single_cell_explorer
    singularity exec Single_cell_explorer.sif solara run single_cell_explorer.py
+
+## Screenshots
+![Single Cell Explorer UI](images/screenshot.png)
+- *Main interface showing UMAP, violin, dot, and feature plots after uploading an `.h5ad` file.*
    
