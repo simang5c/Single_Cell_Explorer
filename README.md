@@ -48,7 +48,7 @@ Single_cell_explorer/
    cd Single_cell_explorer
 - **Download the Singularity container file and**
    - [Singularity container file](https://unisopronhu-my.sharepoint.com/:u:/g/personal/simang5c_uni-sopron_hu/Ed4DAZWt6CpMnUARqZKGJnMBr0OoGS7jLPCplBXddZhORw)
-   - save it in **Single_cell_explorer* directory
+   - save it in **Single_cell_explorer** directory
    - Unzip it
 
 - **Run the application**
