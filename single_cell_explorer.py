@@ -147,7 +147,8 @@ def Page():
                 solara.Text(f"Gene Markers: {genes}")
                 if gene_error.value:
                     solara.Markdown(gene_error.value)
-
+                    
+    #creates a row with two columns of equal width
     with solara.Columns([1, 1], style={"gap": "10px"}):
         if solara_state.value.df is not None and not solara_state.value.df.empty:
             fig = solara.use_memo(
@@ -169,7 +170,8 @@ def Page():
                 solara.Error(f"None of the requested genes found: {solara_state.value.genes}")
         else:
             solara.Text("No data loaded for violin plot", style={"font-size": "18px"})
-
+    
+    # creates another row with two columns of equal width
     with solara.Columns([1, 1], style={"gap": "10px"}):
         if solara_state.value.adata:
             fig, error = create_dot_plot(
