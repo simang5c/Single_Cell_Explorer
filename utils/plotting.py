@@ -198,12 +198,16 @@ def create_dot_plot(
     df["x"] = df["Gene"].map(x_map)
     df["y"] = df["Cluster"].cat.codes
 
+    #Lowest and highest
+    vmin = df["AverageExpression"].min()
+    vmax = df["AverageExpression"].max()
+    
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=df["x"], y=df["y"], mode="markers",
         marker=dict(
             size=df["DotSize"], color=df["AverageExpression"], colorscale=cmap,
-            colorbar=dict(title="Mean Expression", x=1.3, tickvals=[0, 1, 2], ticktext=["Low", "Medium", "High"]),
+            colorbar=dict(title="Mean-Expression", x=1.3, tickvals=[vmin, vmax], ticktext=[f"{vmin:.2f}", f"{vmax:.2f}"]),
             showscale=True, line=dict(width=0)
         ),
         text=[f"Gene: {g}<br>Cluster: {c}<br>%: {p:.1f}<br>Mean: {m:.2f}"
