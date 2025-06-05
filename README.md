@@ -52,9 +52,11 @@ Single_cell_explorer/
    - Unzip it
 
 - **Run the application**
+```bash
  singularity exec Single_cell_explorer.sif solara run single_cell_explorer.py
 
 ## Screenshots
-![Single Cell Explorer UI](images/screenshot.png)
 - *Main interface showing UMAP, violin, dot, and feature plots after uploading an `.h5ad` file.*
+![Single Cell Explorer UI](images/screenshot.png)
+
    
