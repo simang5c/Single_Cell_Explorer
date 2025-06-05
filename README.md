@@ -47,7 +47,7 @@ Single_cell_explorer/
 ## Setup Instructions
 - **Clone the Repository**:
    ```bash
-   git clone https://github.com/<your-username>/Single_cell_explorer.git
+   git clone https://github.com/simang5c/Single_cell_explorer.git
    cd Single_cell_explorer
    singularity exec Single_cell_explorer.sif solara run single_cell_explorer.py
 
