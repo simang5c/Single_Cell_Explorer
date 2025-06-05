@@ -11,6 +11,9 @@ from .state import solara_state, progress, cluster_id, AppState
 # Set up logging
 logger = logging.getLogger(__name__)
 
+##############################
+#handling RIK genes
+##############################
 def fix_gene_name(genes: List[str]) -> List[str]:
     """Standardize gene names."""
     return [
@@ -18,6 +21,9 @@ def fix_gene_name(genes: List[str]) -> List[str]:
         if g else g for g in genes
     ]
 
+##################################
+#Read the h5ad file
+##################################
 def load_file(file: Dict[str, Any]) -> None:
     """Load and preprocess h5ad file with robust error handling."""
     logger.info("Starting file upload: %s", file["name"])
