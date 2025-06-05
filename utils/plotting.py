@@ -11,6 +11,9 @@ from .state import solara_state, cluster_id
 # Set up logging
 logger = logging.getLogger(__name__)
 
+#####################################
+## Function to create a UMAP plot
+#####################################
 def create_umap_plot(df: pd.DataFrame, cluster_id: str, submitted: str) -> Optional[go.Figure]:
     """Create UMAP scatter plot."""
     logger.info("Creating UMAP plot with cluster: %s", cluster_id)
@@ -35,6 +38,7 @@ def create_umap_plot(df: pd.DataFrame, cluster_id: str, submitted: str) -> Optio
             autosize=True, margin=dict(l=10, r=10, t=30, b=10),
             legend=dict(title="Cluster", itemsizing="constant", traceorder="normal")
         )
+        # for centering the cluster label
         for cluster in ordered_clusters:
             cluster_data = plot_df[plot_df["Cluster"] == cluster]
             if not cluster_data.empty:
@@ -50,6 +54,9 @@ def create_umap_plot(df: pd.DataFrame, cluster_id: str, submitted: str) -> Optio
         logger.error("Error creating UMAP plot: %s", str(e))
         return None
 
+###############################
+#Function to create Violin Plot
+###############################
 def create_violin_plot(adata, genes: List[str], cluster_id: str) -> Optional[go.Figure]:
     """Create violin plot for gene expression."""
     adata_source = adata.raw if adata.raw else adata
@@ -82,6 +89,7 @@ def create_violin_plot(adata, genes: List[str], cluster_id: str) -> Optional[go.
         shared_yaxes=True
     )
 
+    # Loop through genes and create the plot
     for idx, sg in enumerate(sanitized_genes):
         row, col = idx // n_cols + 1, idx % n_cols + 1
         for cluster in clusters:
@@ -115,7 +123,10 @@ def create_violin_plot(adata, genes: List[str], cluster_id: str) -> Optional[go.
         fig.update_xaxes(tickangle=45, showgrid=False, tickvals=clusters, ticktext=clusters, row=row, col=col)
     logger.info("Violin plot created successfully")
     return fig
-
+    
+#############################
+#Function to create dotplot
+#############################
 @lru_cache(maxsize=32)
 def create_dot_plot(
     adata_id: int,
@@ -232,6 +243,9 @@ def create_dot_plot(
     logger.info("Dot plot generated successfully")
     return fig, None
 
+#################################
+# Function to create a feature plot
+#################################
 def create_feature_plot(adata, genes: List[str], cluster_id: str) -> Optional[go.Figure]:
     """Create feature plot for gene expression."""
     adata_source = adata.raw if adata.raw else adata
