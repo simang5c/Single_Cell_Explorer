@@ -28,7 +28,19 @@ Interactive Visualizations:
 
 ## Project Structure
 ## Project Structure
-Single_cell_explorer/ ├── Explorer/ │ ├── single_cell_explorer.py # Main Solara app and UI logic │ ├── utils/ │ │ ├── state.py # AppState dataclass and reactive variables │ │ ├── utils.py # Utility functions (file loading, gene name fixing) │ │ ├── plotting.py # Plotting functions (UMAP, violin, dot, feature) │ │ └── init.py  
+```plaintext
+Single_cell_explorer/
+├── Explorer/
+│   ├── single_cell_explorer.py  # Main Solara app and UI logic
+│   ├── utils/
+│   │   ├── state.py             # AppState dataclass and reactive variables
+│   │   ├── utils.py             # Utility functions (file loading, gene name fixing)
+│   │   ├── plotting.py          # Plotting functions (UMAP, violin, dot, feature)
+│   │   └── __init__.py          # Makes utils a Python package
+├── README.md                    # Project documentation
+├── LICENSE                      # MIT License
+└── .gitignore                   # Excludes unnecessary files
+``` 
 
 ## Requirements
 - singularity v4.3.1-noble
